@@ -32,4 +32,22 @@ public void setSeries(List<Series> series) {
 public void addSerie(Series serie) {
 	this.series.add(serie);
 }
+public List<Peliculas> getUserPeliculas(Usuario usuario) {
+	List<Peliculas> lista = new ArrayList<Peliculas>();
+	for(int i = 0; i<peliculas.size(); i++)
+	{
+		if(peliculas.get(i).isinfantil())
+			lista.add(peliculas.get(i));
+	}
+	return lista;
+}
+public List<Series> getUserSeries(Usuario usuario) {
+	List<Series> lista = new ArrayList<Series>();
+	for(int i = 0; i<series.size(); i++)
+	{
+		if(series.get(i).isInfantil())
+			lista.add(series.get(i));
+	}
+	return lista;
+} 
 }

@@ -11,7 +11,7 @@ public class Usuario {
 	
 	private Playlist lista;
 
-	public Usuario(String nombre, String apellidos, LocalDate fecha_nacimiento, String identificacion, String tipo_contrato, boolean infantil) {
+	public Usuario(String nombre, String apellidos, LocalDate fecha_nacimiento, String identificacion, String tipo_contrato) {
 		this.nombre = nombre;
 		this.apellidos = apellidos;
 		this.fecha_nacimiento = fecha_nacimiento;
@@ -22,9 +22,12 @@ public class Usuario {
 		}
 		else
 			this.tipo_contrato = tipo_contrato;
+		if((LocalDate.now().getYear() - fecha_nacimiento.getYear()) > 13)
+			this.infantil=false;
+		else
+			this.infantil=true;
 		
 		
-		this.infantil = infantil;
 		this.lista = new Playlist();
 	}
 
@@ -49,7 +52,10 @@ public class Usuario {
 	}
 
 	public void setFecha_nacimiento(LocalDate fecha_nacimiento) {
-		this.fecha_nacimiento = fecha_nacimiento;
+		if((LocalDate.now().getYear() - fecha_nacimiento.getYear()) > 13)
+			this.infantil=false;
+		else
+			this.infantil=true;
 	}
 
 	public String getIdentificacion() {
