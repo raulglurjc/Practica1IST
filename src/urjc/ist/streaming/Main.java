@@ -6,9 +6,9 @@ import java.util.Arrays;
 import java.util.List;
 
 public class Main {
-	public Catalogo catalogo = new Catalogo();
 	public static void main(String[] args) {
 		LocalDate fecha_nacimiento;
+		LocalDate fecha_muerte;
 		LocalDate fecha_estreno;
 		List<String> premios;
 		List<String> productoras;
@@ -16,7 +16,7 @@ public class Main {
 		List<Director> directores;
 		List<Actor> actores;
 		List<Usuario> usuarios = new ArrayList<Usuario>();		 
-		Catalogo catalogo = new Catalogo();
+		
 		//////////////////////////////////////ACTORES//////////////////////////////////////////////
 		 fecha_nacimiento=LocalDate.of(1968, Month.SEPTEMBER, 25);
 		 premios = Arrays.asList("Goya a mejor actor", "Actir revelacion");
@@ -46,6 +46,32 @@ public class Main {
 		 premios = Arrays.asList("Actriz revelacion");
 		 Actor actor7=new Actor("Miranda","Cosgrove","",fecha_nacimiento, 10,true,premios,null);
 		 
+		 fecha_nacimiento=LocalDate.of(1978, Month.AUGUST, 24);
+		 premios = Arrays.asList("Actriz revelacion");
+		 Actor actor8=new Actor("Beth Jean","Riesgraf","",fecha_nacimiento, 10,true,premios,null);
+		 
+		 fecha_nacimiento=LocalDate.of(1986, Month.AUGUST, 27);
+		 premios = Arrays.asList("Actor revelacion");
+		 Actor actor9=new Actor("Jack","Kesy","",fecha_nacimiento, 10,true,premios,null);
+		 
+		 fecha_nacimiento=LocalDate.of(1989, Month.JULY, 21);
+		 premios = Arrays.asList("Actor revelacion");
+		 Actor actor10=new Actor("Rory Hugh","Culkin","",fecha_nacimiento, 10,true,premios,null);
+		 
+		 fecha_nacimiento=LocalDate.of(1967, Month.NOVEMBER, 1);
+		 premios = Arrays.asList("Actor revelacion");
+		 Actor actor11 = new Actor("Pierre","Padang Coffin","Louis",fecha_nacimiento, 21,true,premios,null);
+		 
+		 fecha_nacimiento=LocalDate.of(1964, Month.JULY, 26);
+		 premios = Arrays.asList("Actriz revelacion");
+		 Actor actor12=new Actor("Sandra","Bullock","",fecha_nacimiento, 10,true,premios,null);
+		 
+		 fecha_nacimiento=LocalDate.of(1971, Month.MARCH, 10);
+		 fecha_muerte=LocalDate.of(2020, Month.SEPTEMBER, 14);
+		 premios = Arrays.asList("Actor revelacion");
+		 Actor actor13=new Actor("Jon","Hamm","",fecha_nacimiento, 10,true,premios,fecha_muerte);
+		 
+		 
 		 ///////////////////////////////////////////////////////////////////////////////////////////////
 		 
 		 //////////////////////////////////////DIRECTORES//////////////////////////////////////////////
@@ -58,6 +84,18 @@ public class Main {
 		 premios = Arrays.asList("premio Grammy al mejor videoclip", "Premio Grammy latino por mejor video musical versi�n corta");
 		 Director director2 = new Director("Pierre","Padang Coffin","Louis",fecha_nacimiento, 21,true,premios,null);
 		 
+		 fecha_nacimiento=LocalDate.of(1966, Month.DECEMBER, 1);
+		 premios = Arrays.asList("premio Grammy al mejor videoclip", "Premio Grammy latino por mejor video musical versi�n corta");
+		 Director director3 = new Director("Chris","Renaud","",fecha_nacimiento, 2,true,premios,null);
+		 
+		 
+		 premios = Arrays.asList("premio Grammy al mejor videoclip", "Premio Grammy latino por mejor video musical versi�n corta");
+		 Director director4 = new Director("Adam","Schindler","",null, 2,true,premios,null);
+		 
+		 fecha_nacimiento=LocalDate.of(1971, Month.MARCH, 9);
+		 premios = Arrays.asList("premio Grammy al mejor videoclip", "Premio Grammy latino por mejor video musical versi�n corta");
+		 Director director5 = new Director("Kyle","Balda","",fecha_nacimiento, 2,true,premios,null);
+		 
 		 ///////////////////////////////////////////////////////////////////////////////////////////////
 		
 		////////////////////////////////////////////////////PELICULAS////////////////////////////////////////// 
@@ -66,7 +104,7 @@ public class Main {
 		directores=Arrays.asList(director1);
 		actores=Arrays.asList(actor1,actor2);
 		etiquetas= Arrays.asList("Etiqueta 1","Etiqueta 2","Etiqueta 3");
-		Peliculas pelicula1= new Peliculas(false,"Soy Leyenda","Descripcion de Soy Leyenda",false,fecha_estreno,"Espa�ol",101,productoras,directores,actores,8,etiquetas);
+		Peliculas pelicula1= new Peliculas(false,"Soy Leyenda","Descripcion de Soy Leyenda",false,fecha_estreno,"Castellano",101,productoras,directores,actores,8,etiquetas);
 		
 		
 		fecha_estreno=LocalDate.of(2014, Month.NOVEMBER, 20);	
@@ -74,18 +112,44 @@ public class Main {
 		directores=Arrays.asList(director1);
 		actores=Arrays.asList(actor3,actor4);
 		etiquetas= Arrays.asList("Etiqueta 4","Etiqueta 5");
-		Peliculas pelicula2= new Peliculas(false,"Los Juegos del Hambre Parte 1","Descripcion de los Juegos del Hambre Parte 1",false,fecha_estreno,"Espa�ol",101,productoras,directores,actores,7,etiquetas);
+		Peliculas pelicula2= new Peliculas(false,"Los Juegos del Hambre Parte 1","Descripcion de los Juegos del Hambre Parte 1",false,fecha_estreno,"Castellano",101,productoras,directores,actores,7,etiquetas);
+		
+		fecha_estreno=LocalDate.of(2010, Month.JULY, 9);	
+		productoras = Arrays.asList("Warner");
+		directores=Arrays.asList(director2, director3);
+		actores=Arrays.asList(actor5,actor6, actor7);
+		etiquetas= Arrays.asList("Etiqueta 5","Etiqueta 6");
+		Peliculas pelicula3= new Peliculas(false,"GRU: Mi villano favorito","Descripcion de GRU: Mi villano favorito",true,fecha_estreno,"Castellano",101,productoras,directores,actores,7,etiquetas);
+		
+		fecha_estreno=LocalDate.of(2015, Month.JULY, 12);	
+		productoras = Arrays.asList("Warner");
+		directores=Arrays.asList(director4);
+		actores=Arrays.asList(actor7,actor8,actor9, actor10);
+		etiquetas= Arrays.asList("Etiqueta 7");
+		Peliculas pelicula4= new Peliculas(false,"Intruders","Descripcion de Intruders",false,fecha_estreno,"Ingles",101,productoras,directores,actores,7,etiquetas);
+		
+		fecha_estreno=LocalDate.of(2015, Month.JUNE, 11);	
+		productoras = Arrays.asList("Warner");
+		directores=Arrays.asList(director2, director5);
+		actores=Arrays.asList(actor11,actor12,actor13);
+		etiquetas= Arrays.asList("Etiqueta 5","Etiqueta 6");
+		Peliculas pelicula5= new Peliculas(false,"Minions","Descripcion de Minions",true,fecha_estreno,"Castellano",101,productoras,directores,actores,7,etiquetas);
+		
 		/////////////////////////////////////////////////////////////////////////////////////////////////////
 
 		////////////////////////////////////////////////////CATALOGO////////////////////////////////////////// 
-		
+		Catalogo catalogo = new Catalogo();
 		catalogo.addPelicula(pelicula1);
 		catalogo.addPelicula(pelicula2);
+		catalogo.addPelicula(pelicula3);
+		catalogo.addPelicula(pelicula4);
+		catalogo.addPelicula(pelicula5);
+		
 		/////////////////////////////////////////////////////////////////////////////////////////////////////
 
 		////////////////////////////////////////////////////USUARIOS////////////////////////////////////////// 
 		fecha_nacimiento = LocalDate.of(1995, Month.DECEMBER, 24);
-		Usuario user1= new Usuario("Raúl", "Gil López", fecha_nacimiento, "53842198a", "normal");
+		Usuario user1= new Usuario("Raul", "Gil Lopez", fecha_nacimiento, "53842198a", "normal");
 		usuarios.add(user1);
 		
 		fecha_nacimiento = LocalDate.of(2013, Month.JUNE, 13);
@@ -93,9 +157,14 @@ public class Main {
 		usuarios.add(user2);
 		/////////////////////////////////////////////////////////////////////////////////////////////////////
 
-		
+		////////////////////////////////////////////////////LISTA DE REPRODUCCION////////////////////////////////////////// 
+		//USUARIO 1
 		usuarios.get(usuarios.indexOf(user1)).getLista().addPelicula(pelicula1);
 		usuarios.get(usuarios.indexOf(user1)).getLista().addLast_Rep_Pelicula(pelicula1, 50);
+		//USUARIO 2
+		usuarios.get(usuarios.indexOf(user2)).getLista().addPelicula(pelicula3);
+		usuarios.get(usuarios.indexOf(user2)).getLista().addPelicula(pelicula5);
+		/////////////////////////////////////////////////////////////////////////////////////////////////////
 		
 		
 		
@@ -108,12 +177,11 @@ public class Main {
 		
 		
 		
-		System.out.println("************************ Catalogo ************************");
+		System.out.println("************************************ Catalogo ************************************");
 		System.out.println("");
 		
 		for(int i=0; i<catalogo.getPeliculas().size(); i++)
-		{
-			String titulo = catalogo.getPeliculas().get(i).getTitulo();
+		{			
 			System.out.println("\t* Pelicula "+catalogo.getPeliculas().get(i).getId()+":");
 			System.out.println("\t\t- Titulo: "+catalogo.getPeliculas().get(i).getTitulo());
 			System.out.println("\t\t- Descripcion: "+catalogo.getPeliculas().get(i).getDescripcion());
@@ -124,22 +192,48 @@ public class Main {
 				aux_infantil = "NO";
 			System.out.println("\t\t- Contenido Infantil: "+aux_infantil);
 			System.out.println("\t\t- Lenguaje: "+catalogo.getPeliculas().get(i).getLenguaje());
-			System.out.println("\t\t- Fecha de Estreno: "+catalogo.getPeliculas().get(i).getFecha_estreno());
-			System.out.println("\n");
+			System.out.println("\t\t- Fecha de Estreno: "+catalogo.getPeliculas().get(i).getFecha_estreno());			
+			System.out.println("\n\t\t- Director/es: ");
+			for(int j=0; j<catalogo.getPeliculas().get(i).getDirectores().size(); j++)
+			{
+				String arg1 = "";
+				String arg2 = "";
+				arg1 = String.valueOf(catalogo.getPeliculas().get(i).getDirectores().get(j).getFecha_nacimiento());
+				
+				if(catalogo.getPeliculas().get(i).getDirectores().get(j).getFecha_muerte() == null)
+					arg2 = "Actualidad";
+				else
+					arg2 = String.valueOf(catalogo.getPeliculas().get(i).getDirectores().get(j).getFecha_muerte());
+				System.out.println("\t\t\t - "+catalogo.getPeliculas().get(i).getDirectores().get(j).getNombre()+" "+catalogo.getPeliculas().get(i).getReparto().get(j).getApellidos() + String.format(" (%s - %s)", arg1, arg2));
+			}
+			System.out.println("\n\t\t- Actor/es: ");
+			for(int j=0; j<catalogo.getPeliculas().get(i).getReparto().size(); j++)
+			{
+				String arg1 = "";
+				String arg2 = "";
+				arg1 = String.valueOf(catalogo.getPeliculas().get(i).getReparto().get(j).getFecha_nacimiento());
+				
+				if(catalogo.getPeliculas().get(i).getReparto().get(j).getFecha_muerte() == null)
+					arg2 = "Actualidad";
+				else
+					arg2 = String.valueOf(catalogo.getPeliculas().get(i).getReparto().get(j).getFecha_muerte());
+				System.out.println("\t\t\t - "+catalogo.getPeliculas().get(i).getReparto().get(j).getNombre()+" "+catalogo.getPeliculas().get(i).getReparto().get(j).getApellidos() + String.format(" (%s - %s)", arg1, arg2));
+			}
 		}
-		System.out.println("**********************************************************\n");
-		System.out.println("************************ Usuarios ************************");
+		System.out.println("**********************************************************************************\n");
+		System.out.println("************************************ Usuarios ************************************");
 		for(int i = 0; i<usuarios.size(); i++)
 		{
 			System.out.println("\n\t* Usuario "+(i+1)+":");
 			System.out.println("\t\t- Nombre: "+usuarios.get(i).getNombre() + " "+usuarios.get(i).getApellidos());
 			System.out.println("\t\t- Fecha de nacimiento: "+usuarios.get(i).getFecha_nacimiento());
+			System.out.println("\t\t- Contenido Infantil: "+usuarios.get(i).isInfantil());
 			System.out.println("\t\t- ID: "+usuarios.get(i).getIdentificacion());
 			System.out.println("\t\t- Tipo de contrato: "+usuarios.get(i).getTipo_contrato());
 			System.out.println("\n\t\t- Lista de reproduccion:");
 			System.out.println("\t\t\t* Peliculas:");
 			if(usuarios.get(i).getLista().getPeliculas().size()==0)
-				System.out.println("\t\t\t\t No se ha añadido ninguna pelicula todavia.");
+				System.out.println("\t\t\t\t No se ha anadido ninguna pelicula todavia.");
 			else 
 			{
 				for(int j = 0; j<usuarios.get(i).getLista().getPeliculas().size(); j++)
@@ -147,7 +241,7 @@ public class Main {
 					int last_rep = usuarios.get(i).getLista().getPeliculas().get(j).getLast_rep();
 					String last_report="";
 					if(last_rep == -1)
-						last_report = "No se ha reproducido todavía";
+						last_report = "No se ha reproducido todavia";
 					else
 						last_report = "Minuto "+String.valueOf(last_rep);
 					System.out.println("\t\t\t\t"+(j+1)+"- "+usuarios.get(i).getLista().getPeliculas().get(j).getTitulo()+"\t - "+last_report);
@@ -155,7 +249,7 @@ public class Main {
 			}
 			System.out.println("\n\t\t\t* Series:");
 			if(usuarios.get(i).getLista().getSeries().size()==0)
-				System.out.println("\t\t\t\t No se ha añadido ninguna serie todavia.");
+				System.out.println("\t\t\t\t No se ha anadido ninguna serie todavia.");
 			else 
 			{
 			
@@ -166,12 +260,17 @@ public class Main {
 			else
 				arg = "Todo";
 			System.out.println("\n\t\t- Catalogo disponible para "+usuarios.get(i).getNombre()+String.format(" (%s) -", arg));
+			System.out.println("\t\t\t * Peliculas:");
+			for(int j=0; j<catalogo.getUserPeliculas(usuarios.get(i)).size(); j++)
+			{
+				System.out.println("\t\t\t\t"+(j+1)+" - "+catalogo.getUserPeliculas(usuarios.get(i)).get(j).getTitulo());
+			}
 			
 		}
 		
 		
 		
-		System.out.println("\n**********************************************************\n");
+		System.out.println("\n************************************\n");
 		System.out.println();
 		
 		System.out.println("\n");
