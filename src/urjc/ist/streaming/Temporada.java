@@ -1,16 +1,31 @@
 package urjc.ist.streaming;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 
 public class Temporada {
-	private List <Capitulo> capitulos;
+	private List<Capitulo> capitulos;
 	private String titulo;
 	private String descripcion;
 	private LocalDate fecha_estreno;
 	private String lenguaje;
-	private int duracion; // expresado en minutos
-	private List<Actor> reparto;  // List<Actor> reparto;
+	private int duracion; 
+	private List<Actor> reparto;
+	
+	
+	
+	public Temporada()
+	{
+		this.capitulos = new ArrayList<Capitulo>();
+		this.titulo = "";
+		this.descripcion = "";
+		this.fecha_estreno = null;
+		this.lenguaje = "";
+		this.duracion = -1;
+		this.reparto = new ArrayList<Actor>();
+	}
+	
 	public Temporada(List<Capitulo> capitulos, String titulo, String descripcion, String lenguaje, List<Actor> reparto) {
 		this.capitulos = capitulos;
 		this.titulo = titulo;
@@ -22,14 +37,50 @@ public class Temporada {
 		int duracion=0;
 		for(int i=0; i<capitulos.size(); i++)
 		{
-			duracion = duracion + capitulos.get(i).getDuracion();
+			this.duracion = duracion + capitulos.get(i).getDuracion();
 		}
-		this.duracion = duracion;
 		
+		List<Integer> frecuencia = new ArrayList<Integer>();
+		List<Actor> nombre = new ArrayList<Actor>();
 		
-		for(int i=0;i<capitulos.size();i++) 
-			this.reparto.addAll(this.capitulos.get(i).getReparto());
+		for(int i=0; i<capitulos.size(); i++)
+		{
+			for(int j = 0; j<capitulos.get(i).getReparto().size(); j++)
+			{
+				if(!nombre.contains(capitulos.get(i).getReparto().get(j)))
+				{
+					nombre.add(capitulos.get(i).getReparto().get(j));
+					frecuencia.add(1);
+				}
+				else
+				{
+					int index = nombre.indexOf(capitulos.get(i).getReparto().get(j));
+					int last = frecuencia.get(index);
+					frecuencia.set(index, last+1);
+				}
+			}
+		}
 		
+			List<Integer> max_frecuencia = new ArrayList<Integer>();
+			List<Actor> max_nombre = new ArrayList<Actor>();
+			
+			for(int i = 0; i<5; i++)
+			{
+				int max_freq = frecuencia.get(0);
+				for(int j = 1; j<nombre.size(); j++)
+				{
+					if(max_freq < frecuencia.get(j))
+						max_freq = frecuencia.get(j);
+				}
+				
+				max_frecuencia.add(frecuencia.get(frecuencia.indexOf(max_freq)));
+				max_nombre.add(nombre.get(frecuencia.indexOf(max_freq)));
+				nombre.remove(nombre.get(frecuencia.indexOf(max_freq)));
+				frecuencia.remove(frecuencia.indexOf(max_freq));
+				
+			}
+		
+		this.reparto = max_nombre;
 	}
 	public List<Capitulo> getCapitulos() {
 		return capitulos;

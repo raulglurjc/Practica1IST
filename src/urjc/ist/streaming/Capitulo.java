@@ -1,5 +1,6 @@
 package urjc.ist.streaming;
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 
 public class Capitulo {
@@ -12,7 +13,22 @@ public class Capitulo {
 	private int duracion; // expresado en minutos
 	private List<Director> directores;
 	private List<Actor> reparto;
-	public Capitulo(int id, String titulo, String descripcion, LocalDate fecha_estreno, String lenguaje, int duracion, List<Director> directores, List<Actor> reparto) 
+	
+	
+	
+	public Capitulo()
+	{
+		this.id = Capitulo.count++;
+		this.titulo = "";
+		this.descripcion = "";
+		this.fecha_estreno = null;
+		this.lenguaje = "";
+		this.duracion = -1;
+		this.directores = new ArrayList<Director>();
+		this.reparto = new ArrayList<Actor>();
+	}
+	
+	public Capitulo(String titulo, String descripcion, LocalDate fecha_estreno, String lenguaje, int duracion, List<Director> directores, List<Actor> reparto) 
 	{		
 		this.id = Capitulo.count++;
 		this.titulo = titulo;

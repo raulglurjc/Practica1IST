@@ -1,34 +1,49 @@
 package urjc.ist.streaming;
 
 import java.time.LocalDate;
+
 public class Usuario {
 	private String nombre;
 	private String apellidos;
 	private LocalDate fecha_nacimiento;
 	private String identificacion;  
 	private String tipo_contrato;
-	private boolean infantil;
-	
-	private Playlist lista;
+	private boolean infantil;	
+	private Playlist playlist;
 
+	
+	public Usuario()
+	{
+		this.nombre = "";
+		this.apellidos = "";
+		this.fecha_nacimiento = null;
+		this.identificacion = "";
+		this.tipo_contrato = "";
+		this.infantil = false;
+		this.playlist = new Playlist();
+	}
+	
 	public Usuario(String nombre, String apellidos, LocalDate fecha_nacimiento, String identificacion, String tipo_contrato) {
 		this.nombre = nombre;
 		this.apellidos = apellidos;
 		this.fecha_nacimiento = fecha_nacimiento;
 		this.identificacion = identificacion;
+		this.playlist = new Playlist();
+		
+		
 		if(!tipo_contrato.equals("normal") && !tipo_contrato.equals("superior") && !tipo_contrato.equals("premium"))
 		{
 			throw new RuntimeException("Error al agregar Usuario, tipo de contrato invalido.");
 		}
 		else
 			this.tipo_contrato = tipo_contrato;
-		if((LocalDate.now().getYear() - fecha_nacimiento.getYear()) > 13)
-			this.infantil=false;
-		else
-			this.infantil=true;
 		
 		
-		this.lista = new Playlist();
+		this.infantil=!((LocalDate.now().getYear() - fecha_nacimiento.getYear()) > 13);
+		
+		
+		
+		
 	}
 
 	public String getNombre() {
@@ -52,10 +67,10 @@ public class Usuario {
 	}
 
 	public void setFecha_nacimiento(LocalDate fecha_nacimiento) {
-		if((LocalDate.now().getYear() - fecha_nacimiento.getYear()) > 13)
-			this.infantil=false;
-		else
-			this.infantil=true;
+		this.fecha_nacimiento = fecha_nacimiento;
+		
+		this.infantil=!((LocalDate.now().getYear() - fecha_nacimiento.getYear()) > 13);
+		
 	}
 
 	public String getIdentificacion() {
@@ -82,12 +97,12 @@ public class Usuario {
 		this.infantil = infantil;
 	}
 
-	public Playlist getLista() {
-		return lista;
+	public Playlist getPlaylist() {
+		return playlist;
 	}
 
-	public void setLista(Playlist lista) {
-		this.lista = lista;
+	public void setPlaylist(Playlist playlist) {
+		this.playlist = playlist;
 	}
 	
 }

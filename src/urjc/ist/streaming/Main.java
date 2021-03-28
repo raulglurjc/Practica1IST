@@ -15,7 +15,9 @@ public class Main {
 		List<String> etiquetas;
 		List<Director> directores;
 		List<Actor> actores;
-		List<Usuario> usuarios = new ArrayList<Usuario>();		 
+		List<Usuario> usuarios = new ArrayList<Usuario>();	
+		List<Capitulo> capitulos;	
+		List<Temporada> temporadas;	
 		
 		//////////////////////////////////////ACTORES//////////////////////////////////////////////
 		 fecha_nacimiento=LocalDate.of(1968, Month.SEPTEMBER, 25);
@@ -71,6 +73,30 @@ public class Main {
 		 premios = Arrays.asList("Actor revelacion");
 		 Actor actor13=new Actor("Jon","Hamm","",fecha_nacimiento, 10,true,premios,fecha_muerte);
 		 
+		 fecha_nacimiento=LocalDate.of(1991, Month.APRIL, 4);
+		 premios = Arrays.asList("Actriz revelacion");
+		 Actor actor14=new Actor("Jamie","Lynn Spears","",fecha_nacimiento, 10,true,premios,null);
+		 
+		 fecha_nacimiento=LocalDate.of(1994, Month.FEBRUARY, 14);
+		 premios = Arrays.asList("Actor revelacion");
+		 Actor actor15=new Actor("Paul","Butcher","",fecha_nacimiento, 10,true,premios,null);
+		 
+		 fecha_nacimiento=LocalDate.of(1989, Month.JULY, 14);
+		 premios = Arrays.asList("Actor revelacion");
+		 Actor actor16=new Actor("Sean","Flynn-Amir","",fecha_nacimiento, 10,true,premios,null);
+		 
+		 fecha_nacimiento=LocalDate.of(1989, Month.FEBRUARY, 21);
+		 premios = Arrays.asList("Actriz revelacion");
+		 Actor actor17=new Actor("Kristin","Herrera","",fecha_nacimiento, 10,true,premios,null);
+		 
+		 fecha_nacimiento=LocalDate.of(1990, Month.JANUARY, 26);
+		 premios = Arrays.asList("Actor revelacion");
+		 Actor actor18=new Actor("Christopher","Massey","",fecha_nacimiento, 10,true,premios,null);
+		 
+		 fecha_nacimiento=LocalDate.of(1992, Month.APRIL, 4);
+		 premios = Arrays.asList("Actriz revelacion");
+		 Actor actor19=new Actor("Alexa","Nikolas","",fecha_nacimiento, 10,true,premios,null);
+		 
 		 
 		 ///////////////////////////////////////////////////////////////////////////////////////////////
 		 
@@ -95,6 +121,10 @@ public class Main {
 		 fecha_nacimiento=LocalDate.of(1971, Month.MARCH, 9);
 		 premios = Arrays.asList("premio Grammy al mejor videoclip", "Premio Grammy latino por mejor video musical versiï¿½n corta");
 		 Director director5 = new Director("Kyle","Balda","",fecha_nacimiento, 2,true,premios,null);
+		 
+		 fecha_nacimiento=LocalDate.of(1966, Month.JANUARY, 14);
+		 premios = Arrays.asList("premio Grammy al mejor videoclip", "Premio Grammy latino por mejor video musical versiï¿½n corta");
+		 Director director6 = new Director("Dan","Schneider","",fecha_nacimiento, 2,true,premios,null);
 		 
 		 ///////////////////////////////////////////////////////////////////////////////////////////////
 		
@@ -136,7 +166,87 @@ public class Main {
 		Peliculas pelicula5= new Peliculas(false,"Minions","Descripcion de Minions",true,fecha_estreno,"Castellano",101,productoras,directores,actores,7,etiquetas);
 		
 		/////////////////////////////////////////////////////////////////////////////////////////////////////
+		
+		
+		////////////////////////////////////////////////////SERIES////////////////////////////////////////// 
+		//CAPITULOS//
+		fecha_estreno = LocalDate.of(2005, Month.DECEMBER, 13);	
+		directores=Arrays.asList(director6);
+		actores=Arrays.asList(actor14,actor15,actor17,actor19);
+		Capitulo capitulo1_temporada1_serie1 = new Capitulo("Bienvenida a la academia", "Capitulo 1 Temporada 1 Zoey 101", fecha_estreno, "Castellano", 24, directores, actores);
+		
+		fecha_estreno = LocalDate.of(2005, Month.DECEMBER, 20);	
+		directores=Arrays.asList(director6);
+		actores=Arrays.asList(actor14,actor15,actor16);
+		Capitulo capitulo2_temporada1_serie1 = new Capitulo("Nuevas compañeras de cuarto", "Capitulo 2 Temporada 1 Zoey 101", fecha_estreno, "Castellano", 24, directores, actores);
+		
+		fecha_estreno = LocalDate.of(2005, Month.DECEMBER, 27);	
+		directores=Arrays.asList(director6);
+		actores=Arrays.asList(actor14,actor15,actor16,actor18,actor19);
+		Capitulo capitulo3_temporada1_serie1 = new Capitulo("La cámara indiscreta", "Capitulo 3 Temporada 1 Zoey 101", fecha_estreno, "Castellano", 24, directores, actores);
+		
+		
+		
+		
+		fecha_estreno = LocalDate.of(2006, Month.JUNE, 12);	
+		directores=Arrays.asList(director6);
+		actores=Arrays.asList(actor14,actor15,actor16,actor17);
+		Capitulo capitulo1_temporada2_serie1 = new Capitulo("De regreso en la ACP", "Capitulo 1 Temporada 2 Zoey 101", fecha_estreno, "Castellano", 24, directores, actores);
+		
+		fecha_estreno = LocalDate.of(2006, Month.JUNE, 14);	
+		directores=Arrays.asList(director6);
+		actores=Arrays.asList(actor14,actor15,actor17,actor18);
+		Capitulo capitulo2_temporada2_serie1 = new Capitulo("La cápsula del tiempo", "Capitulo 2 Temporada 2 Zoey 101", fecha_estreno, "Castellano", 24, directores, actores);
+		
+		fecha_estreno = LocalDate.of(2006, Month.JUNE, 16);	
+		directores=Arrays.asList(director6);
+		actores=Arrays.asList(actor14,actor15,actor16,actor17);
+		Capitulo capitulo3_temporada2_serie1 = new Capitulo("Elección", "Capitulo 3 Temporada 2 Zoey 101", fecha_estreno, "Castellano", 24, directores, actores);
+		
+		
+		
+		
+		fecha_estreno = LocalDate.of(2007, Month.AUGUST, 10);	
+		directores=Arrays.asList(director6);
+		actores=Arrays.asList(actor14,actor15,actor16,actor17);
+		Capitulo capitulo1_temporada3_serie1 = new Capitulo("Sorpresa", "Capitulo 1 Temporada 3 Zoey 101", fecha_estreno, "Castellano", 24, directores, actores);
+		
+		fecha_estreno = LocalDate.of(2007, Month.AUGUST, 17);	
+		directores=Arrays.asList(director6);
+		actores=Arrays.asList(actor14,actor15,actor17,actor18);
+		Capitulo capitulo2_temporada3_serie1 = new Capitulo("La novia de Chase", "Capitulo 2 Temporada 3 Zoey 101", fecha_estreno, "Castellano", 24, directores, actores);
+		
+		fecha_estreno = LocalDate.of(2007, Month.AUGUST, 24);	
+		directores=Arrays.asList(director6);
+		actores=Arrays.asList(actor14,actor15,actor16,actor17, actor19);
+		Capitulo capitulo3_temporada3_serie1 = new Capitulo("El decano guapo", "Capitulo 3 Temporada 3 Zoey 101", fecha_estreno, "Castellano", 24, directores, actores);
+		
+		fecha_estreno = LocalDate.of(2007, Month.AUGUST, 31);	
+		directores=Arrays.asList(director6);
+		actores=Arrays.asList(actor14,actor15,actor16,actor17,actor19);
+		Capitulo capitulo4_temporada3_serie1 = new Capitulo("El tutor de Zoey", "Capitulo 4 Temporada 3 Zoey 101", fecha_estreno, "Castellano", 24, directores, actores);
+		
+		//TEMPORADAS//
+		capitulos = Arrays.asList(capitulo1_temporada1_serie1, capitulo2_temporada1_serie1, capitulo3_temporada1_serie1);
+		Temporada temporada1_serie1 = new Temporada(capitulos, "Temporada 1", "Zoey Brooks (Jamie Lynn Spears) es una chica de 13 años muy alegre y con gran talento para la moda...","Castellano", actores);
+			
+		capitulos = Arrays.asList(capitulo1_temporada2_serie1, capitulo2_temporada2_serie1, capitulo3_temporada2_serie1);
+		Temporada temporada2_serie1 = new Temporada(capitulos, "Temporada 2", "Dana ha sido aceptada por un programa europeo de intercambio de estudiantes...","Castellano", actores);
+		
+		capitulos = Arrays.asList(capitulo1_temporada3_serie1, capitulo2_temporada3_serie1, capitulo3_temporada3_serie1, capitulo4_temporada3_serie1);
+		Temporada temporada3_serie1 = new Temporada(capitulos, "Temporada 3", "Zoey y Lola se convertirán en las compañeras de cuarto de Quinn, quien pasó a ser compañera de Zoey y Lola...","Castellano", actores);
+		
+		
+		temporadas = Arrays.asList(temporada1_serie1, temporada2_serie1, temporada3_serie1);
+		
+		Serie serie1= new Serie(temporadas, "Zoey 101", "La serie gira en torno a Zoey Brooks (Jamie Lynn Spears), una estudiante de un internado de California, PCA, que va conociendo a los que se convertirían en sus mejores amigos.", true,"Castellano" );
+		
+		
+		
+		/////////////////////////////////////////////////////////////////////////////////////////////////////
 
+		
+		
 		////////////////////////////////////////////////////CATALOGO////////////////////////////////////////// 
 		Catalogo catalogo = new Catalogo();
 		catalogo.addPelicula(pelicula1);
@@ -144,6 +254,7 @@ public class Main {
 		catalogo.addPelicula(pelicula3);
 		catalogo.addPelicula(pelicula4);
 		catalogo.addPelicula(pelicula5);
+		catalogo.addSerie(serie1);
 		
 		/////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -159,11 +270,13 @@ public class Main {
 
 		////////////////////////////////////////////////////LISTA DE REPRODUCCION////////////////////////////////////////// 
 		//USUARIO 1
-		usuarios.get(usuarios.indexOf(user1)).getLista().addPelicula(pelicula1);
-		usuarios.get(usuarios.indexOf(user1)).getLista().addLast_Rep_Pelicula(pelicula1, 50);
+		usuarios.get(usuarios.indexOf(user1)).getPlaylist().addPelicula(pelicula1);
+		usuarios.get(usuarios.indexOf(user1)).getPlaylist().addLast_Rep_Pelicula(pelicula1, 50);
 		//USUARIO 2
-		usuarios.get(usuarios.indexOf(user2)).getLista().addPelicula(pelicula3);
-		usuarios.get(usuarios.indexOf(user2)).getLista().addPelicula(pelicula5);
+		usuarios.get(usuarios.indexOf(user2)).getPlaylist().addPelicula(pelicula3);
+		usuarios.get(usuarios.indexOf(user2)).getPlaylist().addPelicula(pelicula5);
+		usuarios.get(usuarios.indexOf(user2)).getPlaylist().removePelicula(pelicula5);
+		
 		/////////////////////////////////////////////////////////////////////////////////////////////////////
 		
 		
@@ -220,6 +333,47 @@ public class Main {
 				System.out.println("\t\t\t - "+catalogo.getPeliculas().get(i).getReparto().get(j).getNombre()+" "+catalogo.getPeliculas().get(i).getReparto().get(j).getApellidos() + String.format(" (%s - %s)", arg1, arg2));
 			}
 		}
+		for(int i=0; i<catalogo.getSeries().size(); i++)
+		{			
+			System.out.println("\t* Serie "+(i+1)+":");
+			System.out.println("\t\t- Titulo: "+catalogo.getSeries().get(i).getTitulo());
+			System.out.println("\t\t- Descripcion: "+catalogo.getSeries().get(i).getDescripcion());
+			String aux_infantil;
+			if(catalogo.getSeries().get(i).isInfantil())
+				aux_infantil = "SI";
+			else
+				aux_infantil = "NO";
+			System.out.println("\t\t- Contenido Infantil: "+aux_infantil);
+			System.out.println("\t\t- Lenguaje: "+catalogo.getSeries().get(i).getLenguaje());
+			System.out.println("\t\t- Estreno del primer capitulo: "+catalogo.getSeries().get(i).getFecha_estreno_primero());
+			System.out.println("\t\t- Estreno del capitulo mas reciente: "+catalogo.getSeries().get(i).getFecha_estreno_ultimo());				
+			System.out.println("\n\t\t- Director/es: ");
+			
+			System.out.println("\n\t\t- Actor/es mas frecuentes de todos los capitulos de TODAS las temporadas: ");
+			for(int j=0; j<catalogo.getSeries().get(i).getReparto().size(); j++)
+			{
+				String arg1 = "";
+				String arg2 = "";
+				arg1 = String.valueOf(catalogo.getSeries().get(i).getReparto().get(j).getFecha_nacimiento());
+				
+				if(catalogo.getSeries().get(i).getReparto().get(j).getFecha_muerte() == null)
+					arg2 = "Actualidad";
+				else
+					arg2 = String.valueOf(catalogo.getSeries().get(i).getReparto().get(j).getFecha_muerte());
+				System.out.println("\t\t\t - "+catalogo.getSeries().get(i).getReparto().get(j).getNombre()+" "+catalogo.getSeries().get(i).getReparto().get(j).getApellidos() + String.format(" (%s - %s)", arg1, arg2)+ " Ha aparecido "+ catalogo.getSeries().get(i).frecuenciaActor(catalogo.getSeries().get(i).getReparto().get(j))+" veces");
+				
+			}
+			System.out.println("\n\t\t- Temporadas: ");
+			for(int j =0; j<catalogo.getSeries().get(i).getTemporadas().size();j++)
+			{
+				System.out.println("\t\t\t * "+catalogo.getSeries().get(i).getTemporadas().get(j).getTitulo());
+				for(int k = 0; k<catalogo.getSeries().get(i).getTemporadas().get(j).getCapitulos().size(); k++)
+				{
+					System.out.println("\t\t\t\t"+catalogo.getSeries().get(i).getTemporadas().get(j).getCapitulos().get(k).getId()+ " "+catalogo.getSeries().get(i).getTemporadas().get(j).getCapitulos().get(k).getTitulo());
+				}
+			}
+			
+		}
 		System.out.println("**********************************************************************************\n");
 		System.out.println("************************************ Usuarios ************************************");
 		for(int i = 0; i<usuarios.size(); i++)
@@ -232,23 +386,23 @@ public class Main {
 			System.out.println("\t\t- Tipo de contrato: "+usuarios.get(i).getTipo_contrato());
 			System.out.println("\n\t\t- Lista de reproduccion:");
 			System.out.println("\t\t\t* Peliculas:");
-			if(usuarios.get(i).getLista().getPeliculas().size()==0)
+			if(usuarios.get(i).getPlaylist().getPeliculas().size()==0)
 				System.out.println("\t\t\t\t No se ha anadido ninguna pelicula todavia.");
 			else 
 			{
-				for(int j = 0; j<usuarios.get(i).getLista().getPeliculas().size(); j++)
+				for(int j = 0; j<usuarios.get(i).getPlaylist().getPeliculas().size(); j++)
 				{
-					int last_rep = usuarios.get(i).getLista().getPeliculas().get(j).getLast_rep();
+					int last_rep = usuarios.get(i).getPlaylist().getPeliculas().get(j).getLast_rep();
 					String last_report="";
 					if(last_rep == -1)
 						last_report = "No se ha reproducido todavia";
 					else
 						last_report = "Minuto "+String.valueOf(last_rep);
-					System.out.println("\t\t\t\t"+(j+1)+"- "+usuarios.get(i).getLista().getPeliculas().get(j).getTitulo()+"\t - "+last_report);
+					System.out.println("\t\t\t\t"+(j+1)+"- "+usuarios.get(i).getPlaylist().getPeliculas().get(j).getTitulo()+"\t - "+last_report);
 				}
 			}
 			System.out.println("\n\t\t\t* Series:");
-			if(usuarios.get(i).getLista().getSeries().size()==0)
+			if(usuarios.get(i).getPlaylist().getSeries().size()==0)
 				System.out.println("\t\t\t\t No se ha anadido ninguna serie todavia.");
 			else 
 			{
@@ -265,12 +419,18 @@ public class Main {
 			{
 				System.out.println("\t\t\t\t"+(j+1)+" - "+catalogo.getUserPeliculas(usuarios.get(i)).get(j).getTitulo());
 			}
+			System.out.println("\t\t\t * Series:");
+			for(int j=0; j<catalogo.getUserSeries(usuarios.get(i)).size(); j++)
+			{
+				System.out.println("\t\t\t\t"+(j+1)+" - "+catalogo.getUserSeries(usuarios.get(i)).get(j).getTitulo());
+			}
+			
 			
 		}
 		
 		
 		
-		System.out.println("\n************************************\n");
+		System.out.println("\n**********************************************************************************\n");
 		System.out.println();
 		
 		System.out.println("\n");

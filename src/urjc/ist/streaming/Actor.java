@@ -2,17 +2,29 @@ package urjc.ist.streaming;
 
 import java.time.LocalDate;
 import java.util.List;
+import java.util.ArrayList;
 
 public class Actor {
 private String nombre;
 private String apellidos;
 private String pseudonimo;
 private LocalDate fecha_nacimiento;
+private int participaciones;
 private boolean activo;
 private List<String> premios;
 private LocalDate fecha_muerte;
-private int participaciones;
 // 8 Argumentos
+public Actor()
+{
+	this.nombre = "";
+	this.apellidos = "";
+	this.pseudonimo = "";
+	this.fecha_nacimiento = null;
+	this.participaciones = 0;
+	this.activo = false;
+	this.premios = new ArrayList<String>();
+	this.fecha_muerte = null;
+}
 public Actor(String nombre, String apellidos, String pseudonimo, LocalDate fecha_nacimiento, int participaciones, boolean activo,
 		List<String> premios, LocalDate fecha_muerte) {
 	
